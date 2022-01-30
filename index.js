@@ -47,6 +47,5 @@ previous.addEventListener("click", () => {
 });
 
 following.addEventListener("click", () => {
-  createImage(imageIndex);
-  imageIndex++;
+  changeImage();
 });
