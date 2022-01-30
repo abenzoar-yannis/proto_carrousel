@@ -13,16 +13,15 @@ let imageIndex = 0;
 const createImage = (i) => {
   insert.innerHTML = "";
   insert.innerHTML = library[i];
+  imageIndex++;
 };
 
 const changeImage = () => {
   if (imageIndex >= library.length) {
     imageIndex = 0;
     createImage(imageIndex);
-    imageIndex++;
   } else {
     createImage(imageIndex);
-    imageIndex++;
   }
 };
 
@@ -36,8 +35,15 @@ const loop = () => {
 loop();
 
 previous.addEventListener("click", () => {
-  imageIndex = imageIndex - 2;
-  createImage(imageIndex);
+  if (imageIndex > 1) {
+    imageIndex = imageIndex - 2;
+    createImage(imageIndex);
+    imageIndex = imageIndex - 1;
+  } else {
+    imageIndex = library.length - 1;
+    createImage(imageIndex);
+    imageIndex = imageIndex - 1;
+  }
 });
 
 following.addEventListener("click", () => {
