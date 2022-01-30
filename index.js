@@ -1,4 +1,6 @@
 const insert = document.getElementById("insert");
+const reset = document.getElementById("reset");
+const timer = 5000;
 let library = [
   '<img class="size" src="images/image01.jpg">',
   '<img class="size" src="images/image02.jpg">',
@@ -11,22 +13,29 @@ const createImage = (i) => {
   insert.innerHTML = library[i];
   setTimeout(() => {
     insert.innerHTML = "";
-  }, 6000);
+  }, timer);
+};
+
+const changeImage = () => {
+  if (imageIndex >= library.length) {
+    imageIndex = 0;
+    createImage(imageIndex);
+    imageIndex++;
+  } else {
+    createImage(imageIndex);
+    imageIndex++;
+  }
 };
 
 const loop = () => {
+  changeImage();
   setTimeout(() => {
-    if (imageIndex >= library.length) {
-      imageIndex = 0;
-      loop();
-    } else {
-      createImage(imageIndex);
-      imageIndex++;
-      setTimeout(() => {
-        loop();
-      }, 6000);
-    }
-  }, 20);
+    loop();
+  }, timer);
 };
 
 loop();
+
+reset.addEventListener("click", () => {
+  imageIndex = 0;
+});
