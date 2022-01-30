@@ -1,5 +1,6 @@
 const insert = document.getElementById("insert");
-const reset = document.getElementById("reset");
+const previous = document.getElementById("slideLeft");
+const following = document.getElementById("slideRight");
 const timer = 5000;
 let library = [
   '<img src="images/image01.jpg">',
@@ -34,7 +35,12 @@ const loop = () => {
 
 loop();
 
-reset.addEventListener("click", () => {
-  imageIndex = 0;
+previous.addEventListener("click", () => {
+  imageIndex = imageIndex - 2;
   createImage(imageIndex);
+});
+
+following.addEventListener("click", () => {
+  createImage(imageIndex);
+  imageIndex++;
 });
