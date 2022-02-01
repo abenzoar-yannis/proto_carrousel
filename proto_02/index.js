@@ -41,3 +41,26 @@ const createNewImage = (i) => {
 let imageIndex = 0;
 createImage(imageIndex);
 //*************** Suite du Carrousel ***************//
+
+const clickPrevious = () => {};
+const clickFollowing = () => {};
+
+previous.addEventListener("click", () => {
+  if (imageIndex > 0) {
+    imageIndex--;
+    createImage(imageIndex);
+  } else {
+    imageIndex = library.length - 1;
+    createImage(imageIndex);
+  }
+});
+
+following.addEventListener("click", () => {
+  if (imageIndex < library.length - 1) {
+    imageIndex++;
+    createImage(imageIndex);
+  } else {
+    imageIndex = 0;
+    createImage(imageIndex);
+  }
+});
