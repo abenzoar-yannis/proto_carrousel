@@ -15,17 +15,22 @@ const arriveRight = () => {
     document.querySelector("img").classList.remove("positionRight");
   }, 10);
 };
-
 const arriveLeft = () => {
   document.querySelector("img").classList.add("positionLeft");
   setTimeout(() => {
     document.querySelector("img").classList.remove("positionLeft");
   }, 10);
 };
+//---------------- peuvent être une seul fonction ----------------//
+// const arriveSide = (Side) => {
+//   document.querySelector("img").classList.add("position" + Side);
+//   setTimeout(() => {
+//     document.querySelector("img").classList.remove("position" + Side);
+//   }, 10);
+// };
 
 const createImage = (i) => {
   insert.innerHTML = library[i].content;
-  arriveLeft();
 };
 const createNewImage = (i) => {
   insert.innerHTML += library[i].content;
