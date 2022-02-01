@@ -35,3 +35,9 @@ const createImage = (i) => {
 const createNewImage = (i) => {
   insert.innerHTML += library[i].content;
 };
+
+//*************** Base défini ***************//
+
+let imageIndex = 0;
+createImage(imageIndex);
+//*************** Suite du Carrousel ***************//
