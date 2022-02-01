@@ -9,8 +9,23 @@ let library = [
   { index: 4, content: '<img src="images/image04.jpg">' },
 ];
 
+const arriveRight = () => {
+  document.querySelector("img").classList.add("positionRight");
+  setTimeout(() => {
+    document.querySelector("img").classList.remove("positionRight");
+  }, 10);
+};
+
+const arriveLeft = () => {
+  document.querySelector("img").classList.add("positionLeft");
+  setTimeout(() => {
+    document.querySelector("img").classList.remove("positionLeft");
+  }, 10);
+};
+
 const createImage = (i) => {
   insert.innerHTML = library[i].content;
+  arriveLeft();
 };
 const createNewImage = (i) => {
   insert.innerHTML += library[i].content;

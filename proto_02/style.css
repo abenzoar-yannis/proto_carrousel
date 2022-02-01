@@ -60,4 +60,12 @@ img {
   max-height: 560px;
   max-width: 100%;
   border-radius: 1rem;
+  transition: 0.5s;
+}
+
+.positionLeft {
+  transform: translateX(-150%);
+}
+.positionRight {
+  transform: translateX(150%);
 }
