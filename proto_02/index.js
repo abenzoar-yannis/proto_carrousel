@@ -8,3 +8,10 @@ let library = [
   { index: 3, content: '<img src="images/image03.jpg">' },
   { index: 4, content: '<img src="images/image04.jpg">' },
 ];
+
+const createImage = (i) => {
+  insert.innerHTML = library[i].content;
+};
+const createNewImage = (i) => {
+  insert.innerHTML += library[i].content;
+};
